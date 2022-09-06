@@ -14,6 +14,8 @@
 		8DA34DC628C7D9D5003ADAD2 /* ListMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DC528C7D9D5003ADAD2 /* ListMusicView.swift */; };
 		8DA34DC828C7DA03003ADAD2 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */; };
 		8DA34DCA28C7DA25003ADAD2 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DC928C7DA25003ADAD2 /* PlayerView.swift */; };
+		8DA34DCC28C7DABF003ADAD2 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DCB28C7DABF003ADAD2 /* LibraryView.swift */; };
+		8DA34DCE28C7DAED003ADAD2 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DCD28C7DAED003ADAD2 /* RadioModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		8DA34DC528C7D9D5003ADAD2 /* ListMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMusicView.swift; sourceTree = "<group>"; };
 		8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
 		8DA34DC928C7DA25003ADAD2 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		8DA34DCB28C7DABF003ADAD2 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		8DA34DCD28C7DAED003ADAD2 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,6 @@
 				8DA34DBD28C7D857003ADAD2 /* App */,
 				8DA34DBC28C7D852003ADAD2 /* View */,
 				8DA34DBB28C7D846003ADAD2 /* Resources */,
-				8DA34DAF28C7D82F003ADAD2 /* ContentView.swift */,
 				8DA34DB328C7D830003ADAD2 /* Preview Content */,
 			);
 			path = AppleMusicTask;
@@ -115,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */,
+				8DA34DCD28C7DAED003ADAD2 /* RadioModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +126,7 @@
 		8DA34DC028C7D88C003ADAD2 /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
+				8DA34DAF28C7D82F003ADAD2 /* ContentView.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 		8DA34DC128C7D898003ADAD2 /* LibraryView */ = {
 			isa = PBXGroup;
 			children = (
+				8DA34DCB28C7DABF003ADAD2 /* LibraryView.swift */,
 			);
 			path = LibraryView;
 			sourceTree = "<group>";
@@ -229,7 +235,9 @@
 				8DA34DB028C7D82F003ADAD2 /* ContentView.swift in Sources */,
 				8DA34DAE28C7D82F003ADAD2 /* AppleMusicTaskApp.swift in Sources */,
 				8DA34DC628C7D9D5003ADAD2 /* ListMusicView.swift in Sources */,
+				8DA34DCE28C7DAED003ADAD2 /* RadioModel.swift in Sources */,
 				8DA34DCA28C7DA25003ADAD2 /* PlayerView.swift in Sources */,
+				8DA34DCC28C7DABF003ADAD2 /* LibraryView.swift in Sources */,
 				8DA34DC828C7DA03003ADAD2 /* ModelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
