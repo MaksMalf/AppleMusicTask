@@ -51,9 +51,10 @@
 		8DA34DAC28C7D82F003ADAD2 /* AppleMusicTask */ = {
 			isa = PBXGroup;
 			children = (
-				8DA34DAD28C7D82F003ADAD2 /* AppleMusicTaskApp.swift */,
+				8DA34DBD28C7D857003ADAD2 /* App */,
+				8DA34DBC28C7D852003ADAD2 /* View */,
+				8DA34DBB28C7D846003ADAD2 /* Resources */,
 				8DA34DAF28C7D82F003ADAD2 /* ContentView.swift */,
-				8DA34DB128C7D830003ADAD2 /* Assets.xcassets */,
 				8DA34DB328C7D830003ADAD2 /* Preview Content */,
 			);
 			path = AppleMusicTask;
@@ -65,6 +66,85 @@
 				8DA34DB428C7D830003ADAD2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8DA34DBB28C7D846003ADAD2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DA34DB128C7D830003ADAD2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8DA34DBC28C7D852003ADAD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DA34DBF28C7D884003ADAD2 /* Models */,
+				8DA34DBE28C7D87D003ADAD2 /* Modules */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8DA34DBD28C7D857003ADAD2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8DA34DAD28C7D82F003ADAD2 /* AppleMusicTaskApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8DA34DBE28C7D87D003ADAD2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8DA34DC428C7D8C5003ADAD2 /* PlayerView */,
+				8DA34DC328C7D8AE003ADAD2 /* RadioView */,
+				8DA34DC228C7D8A4003ADAD2 /* ListMusicView */,
+				8DA34DC128C7D898003ADAD2 /* LibraryView */,
+				8DA34DC028C7D88C003ADAD2 /* ContentView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8DA34DBF28C7D884003ADAD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DA34DC028C7D88C003ADAD2 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		8DA34DC128C7D898003ADAD2 /* LibraryView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LibraryView;
+			sourceTree = "<group>";
+		};
+		8DA34DC228C7D8A4003ADAD2 /* ListMusicView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListMusicView;
+			sourceTree = "<group>";
+		};
+		8DA34DC328C7D8AE003ADAD2 /* RadioView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RadioView;
+			sourceTree = "<group>";
+		};
+		8DA34DC428C7D8C5003ADAD2 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlayerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
