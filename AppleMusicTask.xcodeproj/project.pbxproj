@@ -11,6 +11,9 @@
 		8DA34DB028C7D82F003ADAD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DAF28C7D82F003ADAD2 /* ContentView.swift */; };
 		8DA34DB228C7D830003ADAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA34DB128C7D830003ADAD2 /* Assets.xcassets */; };
 		8DA34DB528C7D830003ADAD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA34DB428C7D830003ADAD2 /* Preview Assets.xcassets */; };
+		8DA34DC628C7D9D5003ADAD2 /* ListMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DC528C7D9D5003ADAD2 /* ListMusicView.swift */; };
+		8DA34DC828C7DA03003ADAD2 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */; };
+		8DA34DCA28C7DA25003ADAD2 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DC928C7DA25003ADAD2 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		8DA34DAF28C7D82F003ADAD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8DA34DB128C7D830003ADAD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DA34DB428C7D830003ADAD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8DA34DC528C7D9D5003ADAD2 /* ListMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMusicView.swift; sourceTree = "<group>"; };
+		8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
+		8DA34DC928C7DA25003ADAD2 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 		8DA34DBF28C7D884003ADAD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 		8DA34DC228C7D8A4003ADAD2 /* ListMusicView */ = {
 			isa = PBXGroup;
 			children = (
+				8DA34DC528C7D9D5003ADAD2 /* ListMusicView.swift */,
 			);
 			path = ListMusicView;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 		8DA34DC428C7D8C5003ADAD2 /* PlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				8DA34DC928C7DA25003ADAD2 /* PlayerView.swift */,
 			);
 			path = PlayerView;
 			sourceTree = "<group>";
@@ -219,6 +228,9 @@
 			files = (
 				8DA34DB028C7D82F003ADAD2 /* ContentView.swift in Sources */,
 				8DA34DAE28C7D82F003ADAD2 /* AppleMusicTaskApp.swift in Sources */,
+				8DA34DC628C7D9D5003ADAD2 /* ListMusicView.swift in Sources */,
+				8DA34DCA28C7DA25003ADAD2 /* PlayerView.swift in Sources */,
+				8DA34DC828C7DA03003ADAD2 /* ModelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
