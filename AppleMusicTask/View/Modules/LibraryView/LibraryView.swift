@@ -11,10 +11,10 @@ struct LibraryView: View {
                     if isBool {
                         Spacer()
 
-                        Text("Ищите свою музыку?")
+                        Text(Strings.mainText)
                             .font(.bold(.title2)())
 
-                        Text("Здесь появиться купленная Вами в\niTunes Store музыка.")
+                        Text(Strings.subMainText)
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
@@ -27,30 +27,30 @@ struct LibraryView: View {
 
                     PlayerView()
                 }
-                .navigationTitle("Медиатека")
+                .navigationTitle(Strings.navTitle)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             isBool.toggle()
                         } label: {
-                            Text(isBool ? "Править" : "Готово")
+                            Text(isBool ? Strings.navBarButtonTextTrue : Strings.navBarButtonTextFalse)
                                 .foregroundColor(.red)
                         }
                     }
                 }
             }
             .tabItem {
-                Label("Медиатека", systemImage: "music.note.list");
+                Label(Strings.firstTabBarText, systemImage: Strings.firstTabBarImage);
             }
 
             RadioView()
                 .tabItem {
-                    Label("Радио", systemImage: "dot.radiowaves.left.and.right")
+                    Label(Strings.secondTabBarText, systemImage: Strings.secondTabBarImage)
                 }
 
             PlayerView()
                 .tabItem {
-                    Label("Поиск", systemImage: "magnifyingglass")
+                    Label(Strings.thirdTabBarText, systemImage: Strings.thirdTabBarImage)
                 }
         }
         .accentColor(.red)
@@ -60,5 +60,24 @@ struct LibraryView: View {
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
         LibraryView()
+    }
+}
+
+extension LibraryView {
+    enum Strings {
+        static let mainText = "Ищите свою музыку?"
+        static let subMainText = "Здесь появиться купленная Вами в\niTunes Store музыка."
+        static let navTitle = "Медиатека"
+        static let navBarButtonTextTrue = "Править"
+        static let navBarButtonTextFalse = "Готово"
+
+        static let firstTabBarText = "Медиатека"
+        static let firstTabBarImage = "music.note.list"
+
+        static let secondTabBarText = "Радио"
+        static let secondTabBarImage = "dot.radiowaves.left.and.right"
+
+        static let thirdTabBarText = "Поиск"
+        static let thirdTabBarImage = "magnifyingglass"
     }
 }
