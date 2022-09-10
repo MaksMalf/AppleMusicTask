@@ -4,23 +4,23 @@ struct PlayerView: View {
     var body: some View {
         VStack {
             HStack {
-                Image("MusicImage")
+                Image(Strings.musicImage)
                     .resizable()
                     .frame(width: 50, height: 50)
                     .cornerRadius(10)
 
-                Text("Miyagi & Andy Panda - Патрон")
+                Text(Strings.songTitle)
 
                 Button {
 
                 } label: {
-                    Image(systemName: "play.fill")
+                    Image(systemName: Strings.playButtonImage)
                 }
 
                 Button {
 
                 } label: {
-                    Image(systemName: "forward.fill")
+                    Image(systemName: Strings.forwardButtonImage)
                 }
             }
             .foregroundColor(.black)
@@ -37,5 +37,15 @@ struct PlayerView: View {
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView()
+    }
+}
+
+extension PlayerView {
+    enum Strings {
+        static let musicImage = "MusicImage"
+        static let songTitle = "Miyagi & Andy Panda - Патрон"
+
+        static let playButtonImage = "play.fill"
+        static let forwardButtonImage = "forward.fill"
     }
 }
