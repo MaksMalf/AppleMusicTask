@@ -32,11 +32,11 @@ struct RadioView: View {
                                         .font(.subheadline)
                                     Image(radio.imageName)
                                         .resizable()
-                                        .frame(width: 350, height: 270)
+                                        .frame(width: UIScreen.screenWidth / 1.2, height: UIScreen.screenHeight / 3.3)
                                 }
                             }
                         }
-                        .padding([.leading, .bottom] , 20)
+                        .padding([.leading, .bottom])
                     }
 
                     VStack(alignment: .leading) {
@@ -65,10 +65,9 @@ struct RadioView: View {
                             }
                         }
                     }
-                    .padding(.leading, 20)
+                    .padding(.leading)
                     .navigationTitle("Радио")
                 }
-                PlayerView()
             }
         }
     }

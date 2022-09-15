@@ -15,3 +15,4 @@ struct AppleMusicTaskApp: App {
         }
     }
 }
+
