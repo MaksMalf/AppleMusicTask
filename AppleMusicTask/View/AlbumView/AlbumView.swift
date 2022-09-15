@@ -33,6 +33,7 @@ struct AlbumView: View {
                 }
 
                 VStack(alignment: .center) {
+                    
                     Divider()
 
                     HStack {

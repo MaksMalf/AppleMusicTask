@@ -20,6 +20,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
+
                 VStack(alignment: .leading) {
 
                     Text("Поиск по категориям")
@@ -34,6 +35,7 @@ struct SearchView: View {
                                 AlbumView()
                             } label: {
                                 ZStack(alignment: .bottomLeading) {
+
                                     Image(album.imageName)
                                         .resizable()
                                         .frame(width: (UIScreen.screenWidth - 50) / 2, height: UIScreen.screenHeight / 5.5)

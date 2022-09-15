@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8D59EC6128CDACC600B95F11 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59EC6028CDACC600B95F11 /* AlbumView.swift */; };
 		8D59EC6428CDADAA00B95F11 /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59EC6328CDADAA00B95F11 /* UIScreen+Ext.swift */; };
-		8D59EC6628CE75BD00B95F11 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59EC6528CE75BD00B95F11 /* PlayerView.swift */; };
 		8D59EC6928CE79EC00B95F11 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59EC6828CE79EC00B95F11 /* TabBar.swift */; };
 		8D59EC6E28CE7B6000B95F11 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59EC6D28CE7B6000B95F11 /* BlurView.swift */; };
 		8D9BFF3728CD24DE0090C4E7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9BFF3628CD24DE0090C4E7 /* SearchView.swift */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		8D59EC6028CDACC600B95F11 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		8D59EC6328CDADAA00B95F11 /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
-		8D59EC6528CE75BD00B95F11 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		8D59EC6828CE79EC00B95F11 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		8D59EC6D28CE7B6000B95F11 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		8D9BFF3628CD24DE0090C4E7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				8DA34DC928C7DA25003ADAD2 /* MiniPlayerView.swift */,
-				8D59EC6528CE75BD00B95F11 /* PlayerView.swift */,
 			);
 			path = PlayerView;
 			sourceTree = "<group>";
@@ -296,7 +293,6 @@
 				8DA34DC628C7D9D5003ADAD2 /* ListMusicView.swift in Sources */,
 				8DA34DCE28C7DAED003ADAD2 /* RadioModel.swift in Sources */,
 				8DA34DD228C7DBC4003ADAD2 /* StationModel.swift in Sources */,
-				8D59EC6628CE75BD00B95F11 /* PlayerView.swift in Sources */,
 				8D59EC6428CDADAA00B95F11 /* UIScreen+Ext.swift in Sources */,
 				8DA34DD028C7DB93003ADAD2 /* RadioView.swift in Sources */,
 				8DA34DCA28C7DA25003ADAD2 /* MiniPlayerView.swift in Sources */,
