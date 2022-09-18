@@ -5,7 +5,8 @@ struct AlbumView: View {
         GridItem(.flexible())
     ]
 
-    let stations = StationModel().createModel()
+    @ObservedObject var stations = StationModel()
+
     let radioList = RadioModel().createModel()
 
     var body: some View {
@@ -33,11 +34,10 @@ struct AlbumView: View {
                 }
 
                 VStack(alignment: .center) {
-                    
                     Divider()
 
                     HStack {
-                        Text("Станции")
+                        Text(Strings.subTitle)
                             .font(.title2)
                             .bold()
 
@@ -46,17 +46,16 @@ struct AlbumView: View {
                         Button {
 
                         } label: {
-                            Text("См. все")
+                            Text(Strings.buttonLable)
                                 .foregroundColor(.red)
                         }
                     }
                     .padding(.trailing)
                 }
 
-
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        ForEach(stations) { station in
+                        ForEach(stations.stationModel) { station in
                             Image(station.imageName)
                                 .resizable()
                                 .frame(width: UIScreen.screenWidth / 2.2, height: UIScreen.screenWidth / 2.2)
@@ -66,12 +65,19 @@ struct AlbumView: View {
             }
             .padding(.leading)
         }
-        .navigationBarTitle("Радио")
     }
 }
 
 struct AlbumView_Previews: PreviewProvider {
     static var previews: some View {
         AlbumView()
+    }
+}
+
+
+extension AlbumView {
+    enum Strings {
+        static let subTitle = "Станции"
+        static let buttonLable = "См. все"
     }
 }

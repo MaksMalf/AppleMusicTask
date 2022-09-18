@@ -21,7 +21,8 @@
 		8DA34DCC28C7DABF003ADAD2 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DCB28C7DABF003ADAD2 /* LibraryView.swift */; };
 		8DA34DCE28C7DAED003ADAD2 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DCD28C7DAED003ADAD2 /* RadioModel.swift */; };
 		8DA34DD028C7DB93003ADAD2 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DCF28C7DB93003ADAD2 /* RadioView.swift */; };
-		8DA34DD228C7DBC4003ADAD2 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DD128C7DBC4003ADAD2 /* StationModel.swift */; };
+		8DA34DD228C7DBC4003ADAD2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA34DD128C7DBC4003ADAD2 /* Station.swift */; };
+		8DA7B72328D649A300CBEE3B /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA7B72228D649A300CBEE3B /* StationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +41,8 @@
 		8DA34DCB28C7DABF003ADAD2 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		8DA34DCD28C7DAED003ADAD2 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
 		8DA34DCF28C7DB93003ADAD2 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
-		8DA34DD128C7DBC4003ADAD2 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
+		8DA34DD128C7DBC4003ADAD2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		8DA7B72228D649A300CBEE3B /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +169,8 @@
 			children = (
 				8DA34DC728C7DA03003ADAD2 /* ModelCell.swift */,
 				8DA34DCD28C7DAED003ADAD2 /* RadioModel.swift */,
-				8DA34DD128C7DBC4003ADAD2 /* StationModel.swift */,
+				8DA34DD128C7DBC4003ADAD2 /* Station.swift */,
+				8DA7B72228D649A300CBEE3B /* StationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,8 +283,9 @@
 				8DA34DAE28C7D82F003ADAD2 /* AppleMusicTaskApp.swift in Sources */,
 				8DA34DC628C7D9D5003ADAD2 /* ListMusicView.swift in Sources */,
 				8DA34DCE28C7DAED003ADAD2 /* RadioModel.swift in Sources */,
-				8DA34DD228C7DBC4003ADAD2 /* StationModel.swift in Sources */,
+				8DA34DD228C7DBC4003ADAD2 /* Station.swift in Sources */,
 				8D59EC6428CDADAA00B95F11 /* UIScreen+Ext.swift in Sources */,
+				8DA7B72328D649A300CBEE3B /* StationModel.swift in Sources */,
 				8DA34DD028C7DB93003ADAD2 /* RadioView.swift in Sources */,
 				8DA34DCA28C7DA25003ADAD2 /* MiniPlayerView.swift in Sources */,
 				8DA34DCC28C7DABF003ADAD2 /* LibraryView.swift in Sources */,

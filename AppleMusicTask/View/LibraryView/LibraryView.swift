@@ -36,7 +36,6 @@ struct LibraryView: View {
                 }
             }
         }
-
     }
 }
 
