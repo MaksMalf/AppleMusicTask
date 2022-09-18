@@ -6,16 +6,19 @@ struct SearchView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    let albums = StationModel().createModel()
-    var filtredAlbums: [StationModel] {
+    
+    @ObservedObject var albums = StationModel()
+
+    var filtredAlbums: [Station] {
         if searchText.isEmpty {
-            return albums
+            return albums.stationModel
         } else {
-            return albums.filter { $0.text.localizedCaseInsensitiveContains(searchText) }
+            return albums.stationModel.filter { $0.text.localizedCaseInsensitiveContains(searchText) }
         }
     }
+
+    @State var expand = false
     @State private var searchText = ""
-    @FocusState private var isFocused: Bool
 
     var body: some View {
         NavigationView {
@@ -23,19 +26,18 @@ struct SearchView: View {
 
                 VStack(alignment: .leading) {
 
-                    Text("Поиск по категориям")
+                    Text(Strings.subTitle)
                         .font(.title2)
                         .bold()
                         .padding(.leading)
-
 
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 5) {
                         ForEach(filtredAlbums) { album in
                             NavigationLink {
                                 AlbumView()
+                                    .navigationTitle(album.text)
                             } label: {
                                 ZStack(alignment: .bottomLeading) {
-
                                     Image(album.imageName)
                                         .resizable()
                                         .frame(width: (UIScreen.screenWidth - 50) / 2, height: UIScreen.screenHeight / 5.5)
@@ -48,6 +50,7 @@ struct SearchView: View {
                                         .padding()
                                         .multilineTextAlignment(.leading)
                                 }
+                                .navigationTitle(Strings.navigationTitle)
                             }
                         }
                     }
@@ -55,8 +58,7 @@ struct SearchView: View {
                 }
                 .padding(.bottom, 80)
             }
-            .searchable(text: $searchText, prompt: "Ваша медиатека")
-            .navigationTitle("Поиск")
+            .searchable(text: $searchText, prompt: Strings.searchBarText)
         }
     }
 }
@@ -64,5 +66,13 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
+    }
+}
+
+extension SearchView {
+    enum Strings {
+        static let subTitle = "Поиск по категориям"
+        static let navigationTitle = "Поиск"
+        static let searchBarText = "Ваша медиатека"
     }
 }

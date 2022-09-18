@@ -10,7 +10,7 @@ struct RadioView: View {
         GridItem(.flexible())
     ]
 
-    let stations = StationModel().createModel()
+    @ObservedObject var stations = StationModel()
     let radioList = RadioModel().createModel()
 
     var body: some View {
@@ -43,13 +43,13 @@ struct RadioView: View {
                         Divider()
                             .frame(width: 350)
 
-                        Text("Станции")
+                        Text(Strings.subTitle)
                             .font(.title2)
                             .bold()
                     }
 
                     LazyVGrid(columns: columns, alignment: .leading) {
-                        ForEach(stations) { station in
+                        ForEach(stations.stationModel) { station in
                             HStack {
                                 Image(station.imageName)
                                     .resizable()
@@ -66,7 +66,7 @@ struct RadioView: View {
                         }
                     }
                     .padding(.leading)
-                    .navigationTitle("Радио")
+                    .navigationTitle(Strings.navigationTitle)
                 }
             }
         }
@@ -76,5 +76,12 @@ struct RadioView: View {
 struct RadioView_Previews: PreviewProvider {
     static var previews: some View {
         RadioView()
+    }
+}
+
+extension RadioView {
+    enum Strings {
+        static let subTitle = "Станции"
+        static let navigationTitle = "Радио"
     }
 }

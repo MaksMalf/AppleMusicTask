@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ListMusicView: View {
     @State var cells = ModelCell().createModel()
-    @State private var selectedCells: Set<ModelCell> = []
+    @State private var selectedCells: Set<ModelCell>?
     @Environment(\.editMode) private var editMode
 
     var body: some View {

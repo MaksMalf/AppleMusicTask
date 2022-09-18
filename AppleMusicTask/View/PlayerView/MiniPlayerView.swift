@@ -3,7 +3,12 @@ import SwiftUI
 struct MiniPlayerView: View {
 
     var animation: Namespace.ID
-    var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
+    var safeArea = UIApplication
+        .shared
+        .connectedScenes
+        .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+        .first { $0.isKeyWindow }?
+        .safeAreaInsets
     @Binding var expand: Bool
     @State var volume: CGFloat = 0
     @State var offset: CGFloat = 0
@@ -11,7 +16,6 @@ struct MiniPlayerView: View {
     var body: some View {
 
         VStack {
-
             Capsule()
                 .fill(Color.gray)
                 .frame(width: expand ? 60 : 0, height: expand ? 4 : 0)
@@ -20,7 +24,6 @@ struct MiniPlayerView: View {
                 .padding(.vertical, expand ? 30 : 0)
 
             HStack(spacing: 15) {
-
                 if expand {
                     Spacer(minLength: 0)
                 }
@@ -31,7 +34,7 @@ struct MiniPlayerView: View {
                     .cornerRadius(12)
 
                 if !expand {
-                    Text(Strings.songTitle)
+                    Text("\(Strings.nameArtists) - \(Strings.nameSong)")
                         .bold()
                         .font(.system(size: 16))
                         .lineLimit(1)
@@ -59,39 +62,34 @@ struct MiniPlayerView: View {
             .foregroundColor(.primary)
 
             VStack {
-
                 HStack {
-
                     VStack(alignment: .leading) {
                         if expand {
-                            Text(Strings.songTitle)
+                            Text(Strings.nameSong)
                                 .font(.title3)
                                 .fontWeight(.bold)
 
-                            Text("Miyagi and Endshpil")
+                            Text(Strings.nameArtists)
                                 .font(.subheadline)
                         }
                     }
                     .matchedGeometryEffect(id: "Lable", in: animation)
                     .foregroundColor(.primary)
 
-
                     Spacer(minLength: 0)
 
                     Button {
 
                     } label: {
-                        Image(systemName: "ellipsis.circle")
+                        Image(systemName: Strings.ellipsButtonImage)
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-
                 }
                 .padding()
                 .padding(.top, 20)
 
                 ZStack(alignment: .leading) {
-
                     Capsule().fill(Color.black.opacity(0.08)).frame(height: 5)
 
                     Circle().frame(width: 8, height: 8)
@@ -99,23 +97,22 @@ struct MiniPlayerView: View {
                 .padding(.horizontal)
 
                 HStack {
-                    Text("0:00")
+                    Text(Strings.startTimerText)
                         .font(.subheadline)
 
                     Spacer()
 
-                    Text("-4:12")
+                    Text(Strings.finishTimerText)
                         .font(.subheadline)
                 }
                 .foregroundColor(.secondary)
                 .padding(.horizontal)
 
                 HStack(spacing: 85) {
-
                     Button {
 
                     } label: {
-                        Image(systemName: "backward.fill")
+                        Image(systemName: Strings.backwardButtonImage)
                             .font(.largeTitle)
                             .foregroundColor(.primary)
                     }
@@ -123,7 +120,7 @@ struct MiniPlayerView: View {
                     Button {
 
                     } label: {
-                        Image(systemName: "play.fill")
+                        Image(systemName: Strings.playButtonImage)
                             .font(.system(size: 45))
                             .foregroundColor(.primary)
                     }
@@ -131,98 +128,83 @@ struct MiniPlayerView: View {
                     Button {
 
                     } label: {
-                        Image(systemName: "forward.fill")
+                        Image(systemName: Strings.forwardButtonImage)
                             .font(.largeTitle)
                             .foregroundColor(.primary)
                     }
-
                 }
                 .padding(.top, 20)
-
 
                 Spacer(minLength: 0)
 
                 HStack(spacing: 15) {
-
-                    Image(systemName: "speaker.fill")
+                    Image(systemName: Strings.speakerButtonImage)
 
                     Slider(value: $volume)
 
-                    Image(systemName: "speaker.wave.2.fill")
+                    Image(systemName: Strings.speakerWaveButtonImage)
                 }
                 .padding()
 
                 HStack(spacing: 85) {
-
                     Button {
 
                     } label: {
-                        Image(systemName: "quote.bubble")
-                            .font(.title2)
+                        Image(systemName: Strings.quoteButtonImage)
                     }
 
                     Button {
 
                     } label: {
-                        Image(systemName: "airplayaudio")
-                            .font(.title2)
+                        Image(systemName: Strings.airplayaudioButtonImage)
                     }
 
                     Button {
 
                     } label: {
-                        Image(systemName: "list.bullet")
-                            .font(.title2)
+                        Image(systemName: Strings.listButtonImage)
                     }
                 }
+                .font(.title2)
                 .foregroundColor(.primary)
                 .padding(.bottom, safeArea?.bottom == 0 ? 15 : safeArea?.bottom)
             }
-            .frame(height: expand ? nil : 0)
+            .frame(width: expand ? nil : 0, height: expand ? nil : 0)
             .opacity(expand ? 1 : 0)
         }
-        .frame(maxHeight: expand ? .infinity : 80)
+        .frame(maxHeight: expand ? .infinity : UIScreen.screenHeight * 0.1)
         .background(
             VStack(spacing: 0) {
-
                 BlurView()
 
                 Divider()
             }
         )
         .onTapGesture(count: 2) {
-            withAnimation(.spring()) { expand = true }
+            withAnimation(.spring()) { expand.toggle() }
         }
         .cornerRadius(expand ? 20 : 0)
-        .offset(y: expand ? 0 : -46)
-        .offset(y: offset)
-        .gesture(DragGesture().onEnded(onEnded(value:)).onChanged(onChanged(value:)))
+        .offset(y: expand ? 0 : -(UIScreen.screenWidth * 0.12))
         .ignoresSafeArea()
-    }
-
-    func onChanged(value: DragGesture.Value) {
-        if value.translation.height > 0 && expand {
-            offset = value.translation.height
-        }
-    }
-
-    func onEnded(value: DragGesture.Value) {
-        withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.95, blendDuration: 0.95)) {
-            if value.translation.height > UIScreen.screenHeight / 3 {
-                expand = false
-            }
-
-            offset = 0
-        }
     }
 }
 
 extension MiniPlayerView {
     enum Strings {
         static let musicImage = "MusicImage"
-        static let songTitle = "Miyagi & Andy Panda - Патрон"
+        static let nameSong = "Патрон"
+        static let nameArtists = "Miyagi & Andy Panda"
+        static let startTimerText = "0:00"
+        static let finishTimerText = "-4:12"
 
         static let playButtonImage = "play.fill"
         static let forwardButtonImage = "forward.fill"
+        static let backwardButtonImage = "backward.fill"
+        static let ellipsButtonImage = "ellipsis.circle"
+        static let speakerButtonImage = "speaker.fill"
+        static let speakerWaveButtonImage = "speaker.wave.2.fill"
+        static let quoteButtonImage = "quote.bubble"
+        static let airplayaudioButtonImage = "airplayaudio"
+        static let listButtonImage = "list.bullet"
     }
 }

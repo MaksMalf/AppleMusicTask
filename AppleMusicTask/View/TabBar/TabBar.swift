@@ -10,10 +10,10 @@ import SwiftUI
 struct TabBar: View {
 
     @State var expand = false
-
     @Namespace var animation
-    
+
     var body: some View {
+        
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             TabView {
                 LibraryView()
@@ -32,9 +32,10 @@ struct TabBar: View {
                     }
             }
             .accentColor(.red)
-            
+
             MiniPlayerView(animation: animation, expand: $expand)
         }
+        .ignoresSafeArea(.keyboard)
     }
 }
 
