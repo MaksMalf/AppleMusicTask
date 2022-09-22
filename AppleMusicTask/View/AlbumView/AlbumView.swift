@@ -59,6 +59,7 @@ struct AlbumView: View {
                             Image(station.imageName)
                                 .resizable()
                                 .frame(width: UIScreen.screenWidth / 2.2, height: UIScreen.screenWidth / 2.2)
+                                .navigationTitle(station.text)
                         }
                     }
                 }
