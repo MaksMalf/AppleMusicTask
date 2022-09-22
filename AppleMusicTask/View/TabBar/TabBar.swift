@@ -6,6 +6,17 @@
 //
 
 import SwiftUI
+import UIKit
+
+struct SomeView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        return SearchView()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+
+    }
+}
 
 struct TabBar: View {
 
@@ -26,10 +37,14 @@ struct TabBar: View {
                         Label(Strings.secondTabBarText, systemImage: Strings.secondTabBarImage)
                     }
 
-                SearchView()
-                    .tabItem {
-                        Label(Strings.thirdTabBarText, systemImage: Strings.thirdTabBarImage)
-                    }
+                NavigationView {
+                    SomeView()
+                        .navigationTitle(Strings.thirdTabBarText)
+                }
+                .tabItem {
+                    Label(Strings.thirdTabBarText, systemImage: Strings.thirdTabBarImage)
+                }
+
             }
             .accentColor(.red)
 
